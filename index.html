@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sette-e-Mezzo</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+<div class="game-container">
+    <h1>Sette-e-Mezzo</h1>
+    <p class="message">Please PLACE BET to start the game</p>
+
+    <div class="game-section">
+        <div class="dealer-section">
+            <h2>Dealer</h2>
+            <p class="dealer-cards"></p>
+            <p class="dealer-sum"></p>
+        </div>
+
+        <div class="player-section">
+            <h2 class="player-name">Player</h2>
+            <p class="player-cards"></p>
+            <p class="player-sum"></p>
+        </div>
+    </div>
+
+    <button id="place-bet-btn" onclick="verifyUserIntegrity(startGame)">PLACE BET</button>
+    <button id="hit-btn" class="hidden" onclick="verifyUserIntegrity(hit)">HIT</button>
+    <button id="stand-btn" class="hidden" onclick="verifyUserIntegrity(stand)">STAND</button>
+    <button id="leave-game-btn" onclick="verifyUserIntegrity(leaveGame)">LEAVE GAME</button>
+    <button id="play-again-btn" style="display: none;">PLAY AGAIN</button>
+
+    <p class="winner"></p>
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>

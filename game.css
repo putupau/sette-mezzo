@@ -1,0 +1,151 @@
+/* Set the background image for the body, cover the entire screen, and set the font and text properties */
+body {
+    background-image: url("./table.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+
+/* Hide elements with the hidden class */
+.hidden {
+    display: none;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the main game container */
+.game-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay for better readability */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Style the main heading */
+h1 {
+    margin-bottom: 20px;
+    color: #f39c12;
+}
+
+/* Style the game sections */
+.game-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Style the player and dealer sections */
+.player-section,
+.dealer-section {
+    flex: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background for sections */
+    border-radius: 8px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Style the sum display for player and dealer */
+.player-sum,
+.dealer-sum {
+    margin: 10px 0;
+}
+
+/* Style the cards in the dealer and player sections */
+.dealer-cards .card,
+.player-cards .card {
+    display: inline-block;
+    border: 1px solid black; /* Optional for visualization */
+    border-radius: 4px;
+    margin: 0 5px; /* Space between cards */
+}
+
+/* Style the buttons */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Change button background color on hover */
+button:hover {
+    background-color: #e67e22;
+}
+
+/* Style the winner message */
+.winner {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #27ae60;
+}
+
+/* Keyframes for card fade-in and scale animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Keyframes for cards sliding into the deck */
+@keyframes slideIntoDeck {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation classes for cards */
+.card.display {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+.card.add-to-deck {
+    animation: slideIntoDeck 0.5s ease-out;
+}
+
+/* Responsive design adjustments for screens smaller than 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for readability */
+    }
+
+    .game-container {
+        margin: auto auto; /* Reduce top and bottom margin */
+    }
+
+    button {
+        padding: 8px 15px; /* Reduce button size */
+        font-size: 14px;   /* Smaller button text */
+    }
+
+    .player-section,
+    .dealer-section {
+        padding: 5px; /* Less padding on mobile */
+        height: auto; /* Allow height to adjust dynamically based on content */
+    }
+
+    .winner {
+        font-size: 1em; /* Reduce winner message size */
+    }
+}
